@@ -29,16 +29,21 @@ export function makeProfile(user) {
 
 const headerContainer = document.getElementById('header-container');
 
-function loadHeader() {
+export default function loadHeader() {
     const dom = makeHeader();
+    // we must reference elements before adding dom to parent via appendChild
+    const header = dom.querySelector('header');
     headerContainer.appendChild(dom);
     
     auth.onAuthStateChanged(user => {
         if(user) {
             // there is a user!
+            const userDom = makeProfile(user);
+            header.appendChild(userDom);
         }
         else {
             // no user
+            console.log('no user, go directly to auth.html do pass go');
         }
     });
 }
