@@ -13,7 +13,8 @@ ui.start('#firebaseui-auth-container', {
     // "providers" - how is user allowed to log in?
     signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.GithubAuthProvider.PROVIDER_ID
     ],
     // where do we go on success?
     signInSuccessUrl: './',
