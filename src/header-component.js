@@ -14,3 +14,7 @@ export function makeHeader() {
     template.innerHTML = html;
     return template.content;
 }
+
+const headerContainer = document.getElementById('header-container');
+const dom = makeHeader();
+headerContainer.appendChild(dom);
