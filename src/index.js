@@ -2,7 +2,9 @@ import './check-auth.js';
 import { auth } from './firebase.js';
 import loadHeader, { updateUser } from './header-component.js';
 
-loadHeader();
+loadHeader(() => {
+    auth.signOut();
+});
 
 auth.onAuthStateChanged(user => {
     if(user) {

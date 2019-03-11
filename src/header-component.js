@@ -17,8 +17,10 @@ export function makeHeader() {
 
 const headerContainer = document.getElementById('header-container');
 
-export default function loadHeader() {
+export default function loadHeader(signOutCallback) {
     const dom = makeHeader();
+    const signOutButton = dom.querySelector('button');
+    signOutButton.addEventListener('click', signOutCallback);
     headerContainer.appendChild(dom);
 }
 
