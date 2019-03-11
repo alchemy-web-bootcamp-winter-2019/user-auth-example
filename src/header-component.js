@@ -14,17 +14,3 @@ export function makeHeader() {
     template.innerHTML = html;
     return template.content;
 }
-
-const headerContainer = document.getElementById('header-container');
-
-export default function loadHeader(signOutCallback) {
-    const dom = makeHeader();
-    const signOutButton = dom.querySelector('button');
-    signOutButton.addEventListener('click', signOutCallback);
-    headerContainer.appendChild(dom);
-}
-
-export function updateUser(user) {
-    const username = document.getElementById('user-name');
-    username.textContent = user.displayName;
-}
