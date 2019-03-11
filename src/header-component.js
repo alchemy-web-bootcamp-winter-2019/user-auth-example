@@ -27,18 +27,15 @@ export function makeProfile(user) {
     return template.content;
 }
 
+const headerContainer = document.getElementById('header-container');
+
 function loadHeader() {
-    const headerContainer = document.getElementById('header-container');
     const dom = makeHeader();
     headerContainer.appendChild(dom);
     
     auth.onAuthStateChanged(user => {
         if(user) {
             // there is a user!
-            const userNameDisplay = document.getElementById('user-name');
-            userNameDisplay.textContent = user.displayName;
-            const profileDisplay = document.getElementById('user-profile');
-            profileDisplay.src = user.photoURL;
         }
         else {
             // no user
