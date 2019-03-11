@@ -1,7 +1,9 @@
 import loadHeader from './header-component.js';
 import { auth } from './firebase.js';
 
-loadHeader({ skipAuth: true });
+// don't load up profile and do auth check on this auth.html page
+const options = { skipAuth: true };
+loadHeader(options);
 
 const ui = new firebaseui.auth.AuthUI(auth);
 
