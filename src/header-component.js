@@ -14,9 +14,11 @@ export function makeHeader() {
 }
 
 export function makeProfile(user) {
+    const avatar = user.photoURL || './assets/default-avatar.png';
+
     const html = /*html*/`
         <div class="profile">
-            <img src="${user.photoURL}">
+            <img src="${avatar}">
             <span>${user.displayName}</span>
             <button>Sign Out</button>
         </div>
@@ -52,7 +54,7 @@ export default function loadHeader(options) {
         }
         else {
             // no user
-            console.log('no user, go directly to auth.html do pass go');
+            window.location = './auth.html';
         }
     });
 }
