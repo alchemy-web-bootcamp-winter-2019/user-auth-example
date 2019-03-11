@@ -10,6 +10,8 @@ ui.start('#firebaseui-auth-container', {
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
         firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ],
+    // where do we go on success?
     signInSuccessUrl: './',
+    // don't show google account chooser
     credentialHelper: firebaseui.auth.CredentialHelper.NONE
 });
