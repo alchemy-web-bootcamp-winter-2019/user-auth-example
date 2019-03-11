@@ -1,4 +1,12 @@
 import './check-auth.js';
-import loadHeader from './header-component.js';
+import { auth } from './firebase.js';
+import loadHeader, { updateUser } from './header-component.js';
 
 loadHeader();
+
+auth.onAuthStateChanged(user => {
+    if(user) {
+        updateUser(user);
+    }
+});
+  

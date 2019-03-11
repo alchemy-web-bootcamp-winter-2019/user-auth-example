@@ -21,3 +21,8 @@ export default function loadHeader() {
     const dom = makeHeader();
     headerContainer.appendChild(dom);
 }
+
+export function updateUser(user) {
+    const username = document.getElementById('user-name');
+    username.textContent = user.displayName;
+}
